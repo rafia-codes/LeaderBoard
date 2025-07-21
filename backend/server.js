@@ -8,7 +8,7 @@ const app=express();
 connectDB();
 
 app.use(cors({
-  origin: "https://leader-board-theta.vercel.app/",
+  origin: "https://leader-board-theta.vercel.app",
   credentials: true
 }));
 
