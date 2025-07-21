@@ -7,7 +7,9 @@ const NormalCard = ({ user,onClaim }) => {
   const handleClaim=async()=>{
     try {
       console.log("inside handleClaim");
-      await axios.post(`http://localhost:5000/${user._id}/claim`);
+      await axios.post(`https://leaderboard-backend-hc7r.onrender.com/${user._id}/claim`,{},{
+        withCredentials:true
+      });
       console.log("claim kar rahe points");
       onClaim();
       setClaim(false);

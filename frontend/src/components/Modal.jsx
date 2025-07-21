@@ -16,7 +16,9 @@ function Modal({ show }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/user", formData);
+      await axios.post("https://leaderboard-backend-hc7r.onrender.com//user", formData,{
+        withCredentials:true
+      });
       show(false);
     } catch (error) {
       console.log(error);

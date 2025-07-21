@@ -7,7 +7,11 @@ import userRoutes from './routes/userRoutes.js';
 const app=express();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://leader-board-theta.vercel.app/",
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.listen(5000,()=>{

@@ -7,7 +7,9 @@ function Rankings() {
     const [users,setUsers]=useState([]);
     const getUser=async()=>{
             try {
-               const res=await axios.get('http://localhost:5000/user?q=rank'); 
+               const res=await axios.get('https://leaderboard-backend-hc7r.onrender.com/user?q=rank',{
+                withCredentials:true
+               }); 
                setUsers([...res.data.users]);
             } catch (error) {
                 console.log(error);

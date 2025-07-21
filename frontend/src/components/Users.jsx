@@ -9,7 +9,9 @@ function Users() {
 
   const fetchUsers = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/user?q=user`);
+        const res = await axios.get(`https://leaderboard-backend-hc7r.onrender.com/user?q=user`,{
+          withCredentials:true
+        });
         setUsers([...res.data.users]);
       } catch (error) {
         console.log(error);
